@@ -1,5 +1,5 @@
 import React from "react";
-import AddToCart from "./AddToCart";
+import AddToCart from "./ThemeToggle";
 
 const Products = () => {
   return (

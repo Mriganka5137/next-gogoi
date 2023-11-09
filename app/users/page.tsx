@@ -8,7 +8,7 @@ interface Props {
 const Users = async ({ searchParams: { sortOrder } }: Props) => {
   return (
     <div className="text-secondary-content">
-      <h2 className=" text-3xl font-bold">Users</h2>
+      <h1 className="">Users</h1>
       <UserTable sortOrder={sortOrder} />
     </div>
   );

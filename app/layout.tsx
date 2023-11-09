@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import AddToCart from "./components/AddToCart";
+import AddToCart from "./components/ThemeToggle";
 import Link from "next/link";
 import Navbar from "./Navbar";
+import ThemeToggle from "./components/ThemeToggle";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,9 +21,9 @@ export default function RootLayout({
   return (
     <html lang="en" data-theme="dark">
       <body className={inter.className}>
-        <div className=" flex justify-between">
+        <div className=" flex justify-between mb-10">
           <Navbar />
-          <AddToCart />
+          <ThemeToggle />
         </div>
         {children}
       </body>
