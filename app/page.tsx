@@ -10,7 +10,6 @@ export default function Home() {
         <Link href="/users">Users</Link>
         <Link href="/users/new-users">new users</Link>
       </ul>
-      <Products />
     </main>
   );
 }

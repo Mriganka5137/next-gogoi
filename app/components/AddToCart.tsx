@@ -3,17 +3,23 @@ import React from "react";
 
 const AddToCart = () => {
   return (
-    <>
+    <div className="flex justify-end">
       <button
-        // className=" bg-blue-200 px-4 py-2 rounded-full mt-2"
-        className="btn btn-primary text-primary-content"
+        className="btn btn-outline text-secondary"
         onClick={() => {
-          alert("Added");
+          const html = document.querySelector("html");
+          const theme = html?.getAttribute("data-theme");
+
+          if (theme === "lemonade") {
+            html?.setAttribute("data-theme", "dark");
+          } else {
+            html?.setAttribute("data-theme", "lemonade");
+          }
         }}
       >
-        Add to cart
+        toggle theme
       </button>
-    </>
+    </div>
   );
 };
 
