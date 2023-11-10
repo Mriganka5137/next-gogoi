@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { schema } from "../schema";
 interface Props {
   params: {
     id: number;
@@ -22,8 +23,11 @@ export async function PUT(request: NextRequest, { params: { id } }: Props) {
   //return --> the updated body
 
   const user = await request.json();
-  if (!user.name) {
-    return NextResponse.json({ error: "Name is required" }, { status: 400 });
+
+  const validation = schema.safeParse(user);
+
+  if (!validation.success) {
+    return NextResponse.json(validation.error.errors, { status: 400 });
   }
 
   if (id > 25) {
