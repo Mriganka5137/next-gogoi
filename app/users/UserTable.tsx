@@ -40,7 +40,7 @@ const UserTable = async ({ sortOrder }: Props) => {
                   {user.name}
                 </Link>
               </td>
-              <td>{user.email}</td>
+              <td>{user.email.toLowerCase()}</td>
             </tr>
           ))}
         </tbody>
