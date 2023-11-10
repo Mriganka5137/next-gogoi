@@ -21,7 +21,7 @@ const UserTable = async ({ sortOrder }: Props) => {
   return (
     <>
       <div className=" flex justify-end"></div>
-      <table className=" table table-bordered">
+      <table className="table table-zebra ">
         <thead>
           <tr>
             <th>
