@@ -29,25 +29,53 @@ export async function PUT(request: NextRequest, { params: { id } }: Props) {
   // if greater than 25 ---> status 404
   //return --> the updated body
 
-  const user = await request.json();
+  const body = await request.json();
 
-  const validation = schema.safeParse(user);
+  const validation = schema.safeParse(body);
 
   if (!validation.success) {
     return NextResponse.json(validation.error.errors, { status: 400 });
   }
 
-  if (+id > 25) {
+  // Check if user exists
+  const user = await prisma.user.findUnique({
+    where: {
+      id: parseInt(id),
+    },
+  });
+
+  if (!user) {
     return NextResponse.json({ error: "User not found" }, { status: 404 });
   }
 
-  return NextResponse.json({ id: 5137, name: user.name }, { status: 200 });
+  const updatedUser = await prisma.user.update({
+    where: {
+      id: user.id,
+    },
+    data: {
+      name: body.name,
+      email: body.email,
+    },
+  });
+  return NextResponse.json(updatedUser);
 }
 
-export function DELETE(request: NextRequest, { params: { id } }: Props) {
-  if (+id > 10) {
+export async function DELETE(request: NextRequest, { params: { id } }: Props) {
+  const user = await prisma.user.findUnique({
+    where: {
+      id: parseInt(id),
+    },
+  });
+
+  if (!user) {
     return NextResponse.json({ error: "User not found" }, { status: 404 });
   }
+
+  await prisma.user.delete({
+    where: {
+      id: user.id,
+    },
+  });
 
   return NextResponse.json({});
 }
