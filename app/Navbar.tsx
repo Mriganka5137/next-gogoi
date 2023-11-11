@@ -16,6 +16,9 @@ const Navbar = () => {
       <Link href="/admin" className=" text-xl text-secondary">
         Admin
       </Link>
+      <Link href="/api/auth/signin" className=" text-xl text-secondary">
+        Login
+      </Link>
     </div>
   );
 };
