@@ -6,7 +6,7 @@ import React from "react";
 const Navbar = () => {
   const { status, data: session } = useSession();
   return (
-    <div className=" flex justify-between gap-10">
+    <div className=" flex justify-between gap-10 items-center">
       <Link href="/" className=" text-md text-secondary">
         Home
       </Link>
@@ -28,9 +28,14 @@ const Navbar = () => {
         </Link>
       )}
       {status === "authenticated" && (
-        <Link href="" className=" text-md text-secondary">
-          {session.user!.name}
-        </Link>
+        <div className=" flex gap-5 items-center">
+          <Link href="" className=" text-md text-secondary">
+            {session.user!.name}
+          </Link>
+          <Link href="/api/auth/signout" className=" btn btn-ghost ">
+            Logout
+          </Link>
+        </div>
       )}
     </div>
   );
