@@ -5,11 +5,8 @@ import Products from "./components/Products";
 export default function Home() {
   return (
     <main className="text-secondary-content">
-      <h1>Hello World</h1>
-      <ul className=" flex gap-5">
-        <Link href="/users">Users</Link>
-        <Link href="/users/new-users">new users</Link>
-      </ul>
+      <h1 className=" text-sky-500 text-5xl">Welcome</h1>
+      <ul className=" flex gap-5"></ul>
     </main>
   );
 }
