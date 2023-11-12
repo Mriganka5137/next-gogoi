@@ -5,6 +5,7 @@ import AddToCart from "./components/ThemeToggle";
 import Link from "next/link";
 import Navbar from "./Navbar";
 import ThemeToggle from "./components/ThemeToggle";
+import AuthProvider from "./auth/AuthProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,11 +22,13 @@ export default function RootLayout({
   return (
     <html lang="en" data-theme="dark">
       <body className={inter.className}>
-        <div className=" flex justify-between mb-10">
-          <Navbar />
-          <ThemeToggle />
-        </div>
-        {children}
+        <AuthProvider>
+          <div className=" flex justify-between mb-10">
+            <Navbar />
+            <ThemeToggle />
+          </div>
+          <main>{children}</main>
+        </AuthProvider>
       </body>
     </html>
   );
