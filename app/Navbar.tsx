@@ -6,7 +6,7 @@ import React from "react";
 const Navbar = () => {
   const { status, data: session } = useSession();
   return (
-    <div className=" flex justify-between gap-10 items-center">
+    <div className=" flex justify-between gap-10 items-center max-md:gap-3 max-md:text-xs">
       <Link href="/" className=" text-md text-secondary">
         Home
       </Link>
@@ -28,7 +28,7 @@ const Navbar = () => {
         </Link>
       )}
       {status === "authenticated" && (
-        <div className=" flex gap-5 items-center">
+        <div className=" flex gap-5 items-center max-md:gap-2 max-sm:hidden">
           <Link href="" className=" text-md text-secondary">
             {session.user!.name}
           </Link>

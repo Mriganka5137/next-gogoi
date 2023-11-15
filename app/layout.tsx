@@ -23,7 +23,7 @@ export default function RootLayout({
     <html lang="en" data-theme="dark">
       <body className={inter.className}>
         <AuthProvider>
-          <div className=" flex justify-between mb-10">
+          <div className=" flex justify-between mb-10 max-md:flex-wrap">
             <Navbar />
             <ThemeToggle />
           </div>
