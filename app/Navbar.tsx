@@ -6,7 +6,7 @@ import React from "react";
 const Navbar = () => {
   const { status, data: session } = useSession();
   return (
-    <div className=" flex justify-between gap-10 items-center max-md:gap-3 max-md:text-xs">
+    <div className=" flex justify-between gap-10 items-center max-md:gap-3 max-md:text-xs font-babasNeue">
       <Link href="/" className=" text-md text-secondary">
         Home
       </Link>

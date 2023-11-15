@@ -10,7 +10,7 @@ const Users = async ({ searchParams: { sortOrder } }: Props) => {
   return (
     <div className="text-secondary-content">
       <div className=" flex justify-between items-center">
-        <h1 className="">Users</h1>
+        <h1 className=" font-babasNeue">Users</h1>
         <Link href="/users/new-users" className=" btn btn-neutral">
           New User
         </Link>

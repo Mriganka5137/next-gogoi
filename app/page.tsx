@@ -9,14 +9,16 @@ export default async function Home() {
   const session = await getServerSession(authOptions);
   return (
     <main className="relative h-screen">
-      <Image
+      {/* <Image
         src="https://images.pexels.com/photos/691668/pexels-photo-691668.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
         fill
         alt="image"
         className="object-cover"
         quality={100}
         sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 33vw"
-      />
+      /> */}
+
+      <h1 className="font-poppins">Welcome</h1>
     </main>
   );
 }
